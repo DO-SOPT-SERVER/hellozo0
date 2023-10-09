@@ -1,11 +1,14 @@
 package com.week1.week1_hw.dto;
 
-public class HealthCheckResponseEntity {
-    private Integer code;
-    private String status;
-    private Boolean success;
+import lombok.Getter;
 
-    public HealthCheckResponseEntity(Integer code, String status, Boolean success) {
+@Getter
+public class HealthCheckResponseEntity {
+    private int code;
+    private String status;
+    private boolean success;
+
+    public HealthCheckResponseEntity(int code, String status, boolean success) {
         this.code = code;
         this.status = status;
         this.success = success;
