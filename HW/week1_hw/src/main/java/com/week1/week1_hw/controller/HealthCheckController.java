@@ -1,6 +1,7 @@
 package com.week1.week1_hw.controller;
 
-import lombok.Getter;
+import com.week1.week1_hw.Utils.StatusCode;
+import com.week1.week1_hw.dto.HealthCheckResponseEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,5 +42,11 @@ public class HealthCheckController {
 //    public ResponseEntity<HealthCheckResponse> healthCheckV5() {
 //        return ResponseEntity.ok(new HealthCheckResponse());
 //    }
+
+    @GetMapping("/v6")
+    public ResponseEntity<HealthCheckResponseEntity> healthCheckV6() {
+        return ResponseEntity.ok(new HealthCheckResponseEntity(StatusCode.OK, "OK",true));
+    }
+
 
 }
