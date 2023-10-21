@@ -7,7 +7,7 @@
 
 | 주차 | 내용 | 코드리뷰 적용 유무 | 키워드 과제🔗 |
 |:------:|:------|:------:|:------:|
-|`1주차`| Java 기초 및 Spring 기초 |  | [노션🔗](https://hellozo0.notion.site/1-2b564daed4b74dd09fa4becfb5f75151?pvs=4) | 
+|`1주차`| Java 기초 및 Spring 기초 | O | [노션🔗](https://hellozo0.notion.site/1-2b564daed4b74dd09fa4becfb5f75151?pvs=4) | 
 |`2주차`| Spring Boot, HTTP, RESTful (HTTP의 개념 및 RESTful의 특징) |  |  | 
 |`3주차`| RDB, JPA |  |  | 
 |`4주차`| Deploy (AWS), AWS EC2 |  |  | 
