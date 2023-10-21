@@ -1,7 +1,7 @@
 package com.week1.week1_hw.controller;
 
-import com.week1.week1_hw.Utils.StatusCode;
-import com.week1.week1_hw.dto.HealthCheckResponseEntity;
+import com.week1.week1_hw.dto.ApiResponse;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,8 +44,8 @@ public class HealthCheckController {
 //    }
 
     @GetMapping("/v6")
-    public ResponseEntity<HealthCheckResponseEntity> healthCheckV6() {
-        return ResponseEntity.ok(new HealthCheckResponseEntity(StatusCode.OK, "OK",true));
+    public ApiResponse<ApiResponse> healthCheckV6() {
+        return ApiResponse.success(HttpStatus.OK);  //	OK(200, Series.SUCCESSFUL, "OK")
     }
 
 
