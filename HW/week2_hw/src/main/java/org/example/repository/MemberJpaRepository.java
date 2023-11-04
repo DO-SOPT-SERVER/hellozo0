@@ -1,6 +1,7 @@
 package org.example.repository;
 
 import jakarta.persistence.EntityNotFoundException;
+import org.example.constant.ErrorMessage;
 import org.example.domain.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -13,6 +14,6 @@ public interface MemberJpaRepository extends JpaRepository<Member, Long> {
     //Service 파일의 getMemberByIdV3 함수에서 사용~
     default Member findByIdOrThrow(Long id) {
         return findById(id).orElseThrow(
-                () -> new EntityNotFoundException("존재하지 않는 회원입니다."));
+                () -> new EntityNotFoundException(ErrorMessage.NOT_FOUND_MEMBER_EXCEPTION.getMessage()));
     }
 }

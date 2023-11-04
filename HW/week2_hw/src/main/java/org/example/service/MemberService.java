@@ -1,6 +1,7 @@
 package org.example.service;
 
 import jakarta.persistence.EntityNotFoundException;
+import org.example.constant.ErrorMessage;
 import org.example.domain.SOPT;
 import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -31,7 +32,7 @@ public class MemberService {
     //  특정 사용자 정보 단건 조회 V2 용 Service
     public MemberGetResponse getMemberByIdV2(Long id) {
         return MemberGetResponse.of(memberJpaRepository.findById(id).orElseThrow( //만약에 회원이 없을 경우의 에러 처리를 해주는 ..함수..?!
-                () -> new EntityNotFoundException("존재하지 않는 회원입니다.")));
+                () -> new EntityNotFoundException(ErrorMessage.NOT_FOUND_MEMBER_EXCEPTION.getMessage())));
     }
 
     //  특정 사용자 정보 단건 조회 V3 용 Service
@@ -52,7 +53,7 @@ public class MemberService {
 
     //생성 Service
     @Transactional
-    public String create(MemberCreateRequest request) {
+    public void create(MemberCreateRequest request) {
 //        Member member =  memberJpaRepository.save(Member.builder() //save가 리턴 값이 있게 받아올 수도 있
 //                .name(request.getName())
 //                .nickname(request.getNickname())
@@ -68,7 +69,6 @@ public class MemberService {
                 .age(request.age())
                 .sopt(request.sopt())
                 .build());
-        return member.getId().toString();
     }
 
     //수정 Service
