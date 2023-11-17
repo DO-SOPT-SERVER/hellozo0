@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="68898a8f-52cb-478b-a6d4-3596406be4fe" name="do sopt demo">
+        <fileTransfer rootFolder="/home/ubuntu" accessType="SFTP" host="52.79.193.167" port="22" sshConfigId="b173b747-33d4-41a4-b785-372b3c969e1e" sshConfig="ubuntu@52.79.193.167:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
