@@ -9,7 +9,7 @@ public record PostGetResponse(
 ) {
     public static PostGetResponse of(Post post){
         return new PostGetResponse(
-                post.getPostId(),
+                post.getId(),
                 post.getTitle(),
                 post.getContent()
         );

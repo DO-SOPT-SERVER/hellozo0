@@ -26,7 +26,7 @@ public class PostService {
     private final CategoryService categoryService;
 
     @Transactional
-    public void create(PostCreateRequest request, Long memberId) {
+    public String create(PostCreateRequest request, Long memberId) {
         Member member = memberJpaRepository.findByIdOrThrow(memberId);
         Post post = postJpaRepository.save(
                 Post.builder()
@@ -34,7 +34,7 @@ public class PostService {
                         .content(request.content())
                         .member(member)
                         .build());
-//        return post.getPostId().toString();
+        return post.getId().toString();
     }
 
     public List<PostGetResponse> getByMemberId(Long memberId){
