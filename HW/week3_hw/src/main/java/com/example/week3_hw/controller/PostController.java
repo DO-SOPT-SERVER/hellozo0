@@ -22,13 +22,13 @@ public class PostController {
     private static final String CUSTOM_AUTH_ID = "X-Auth-Id"; //인증 인가와관련된 것인데.. 추후에 배울 예정이지만 더 알아보면 좋음 2주차때 Header에 유저 관련된 정보를 넣는다고 햇음 그거 활용
     private final PostService postService;
 
-    @PostMapping
-    public ApiResponse createPost(@RequestHeader(CUSTOM_AUTH_ID) Long memberId,
-                                           @RequestBody PostCreateRequest request){
-        postService.create(request, memberId);
-        return ApiResponse.success(SuccessMessage.CREATE_POST_SUCCESS);
-
-    }
+//    @PostMapping
+//    public ApiResponse createPost(@RequestHeader(CUSTOM_AUTH_ID) Long memberId,
+//                                           @RequestBody PostCreateRequest request){
+//        postService.create(request, memberId);
+//        return ApiResponse.success(SuccessMessage.CREATE_POST_SUCCESS);
+//
+//    }
 
     @GetMapping("{postId}") //원하는 post보기
     public ApiResponse getPostById(@PathVariable Long postId){
